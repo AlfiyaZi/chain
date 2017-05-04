@@ -54,7 +54,7 @@ export const createSpendingTx = (actions: Action[]): Promise<string> => {
           builder.controlWithAccount(action)
           break
         case "spendUnspentOutput":
-          builder.spendUnspentOutput(action)
+          builder.spendAnyUnspentOutput(action)
           break
         default:
           break
