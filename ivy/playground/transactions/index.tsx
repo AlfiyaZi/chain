@@ -39,7 +39,7 @@ export function createFundingTx(actions: Action[]): Promise<Object> {
   })
 }
 
-export const createSpendingTx = (actions: Action[]): Promise<string> => {
+export const createSpendingTx = (actions: Action[]): Promise<Object> => {
   console.log("actions", actions)
   return client.transactions.build(builder => {
     actions.forEach(action => {
@@ -60,5 +60,7 @@ export const createSpendingTx = (actions: Action[]): Promise<string> => {
           break
       }
     })
+  }).then((tpl) => {
+    return Promise.resolve({})
   })
 }
